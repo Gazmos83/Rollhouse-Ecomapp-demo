@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products  <%= @test_variable %></h1>
+<h1>Products</h1>
 
 <div class="container-fluid">
   <div class="row">
@@ -10,6 +10,7 @@
         <a href="#"><h3><%= product.name %></h3></a>
         <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
         <p><%= product.description %></p>
+        <p><%= product.color %></p>
         <strong><td><%= product.price %></td></strong>
         <br>
         <td><%= link_to 'Show', product %></td>
