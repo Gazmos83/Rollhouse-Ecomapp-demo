@@ -1,26 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1 class="product-index">Products</h1>
 
 <div class="container-fluid">
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm col-md-3 col-lg-4">
-
-        <a href="#"><h3><%= product.name %></h3></a>
-        <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
-        <p><%= product.description %></p>
-        <p><%= product.color %></p>
-        <strong><td><%= product.price %></td></strong>
-        <br>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </div><!-- /col -->
-    <% end %>
+    <%= render partial: "shared/product", collection: @products %>  
   </div>
 </div>
-
-<br>
 
 <%= link_to 'New Product', new_product_path %>
