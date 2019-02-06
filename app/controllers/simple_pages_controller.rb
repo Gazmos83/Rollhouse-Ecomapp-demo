@@ -4,5 +4,6 @@ class SimplePagesController < ApplicationController
   end
   def landing_page
     @products = Product.limit(6)
+    @featured_product = Product.first
   end
 end
