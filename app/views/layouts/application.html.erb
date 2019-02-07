@@ -20,20 +20,19 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" class="bgimg-2">
     <nav class="navbar navbar-light bg-light full-text" role="navigation" id="nav">
 
      <section class="left">
       <ul class="nav nav-pills">
-       <li class="nav-item"><a class="nav-link" href="#carousel">Home</a>
+       <li class="nav-item"><a class="nav-link" href="simple_pages/landing_page">Home</a>
        </li>
      </section>
 
      <section class="right">
       <ul class="nav nav-pills">
-       <li class="nav-item"><a class="nav-link" href="#carousel">Our philosophy</a>
-       <li class="nav-item"><a class="nav-link" href="#carousel"><i class="fas fa-book-reader"></i> About</a>
-       <li class="nav-item"><a class="nav-link" href="#carousel">FAQ</a>
+       <li class="nav-item"><a class="nav-link" href="simple_pages/about"><i class="fas fa-book-reader"></i> About</a>
+       <li class="nav-item"><a class="nav-link" href="simple_pages/faq">FAQ</a>
        <li class="nav-item"><a class="nav-link" href="simple_pages/contact"><i class="fas fa-phone"></i> Contact</a>
       </li>
 
@@ -41,9 +40,21 @@
 
   </nav>
   <%= yield %>
-  <footer>
-    &copy; 2019 Klad Consulting
+
+  <footer class="footer-section">
+      <section class="container text-center">
+          <h2 class="footer-title">Follow Me</h2>
+              <ul class="footer-list">
+                  <li><a class="fab fa-facebook" target="_blank" href="https://www.facebook.com/kevin.dath"></a></li>
+                  <li><a class="fab fa-linkedin" target="_blank" href="https://www.linkedin.com/in/kevin-dath-3b294579"></a></li>
+                  <li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/chimericano/"></a></li>
+                  <li><a class="twitter-follow-button" href="https://twitter.com/nachhaltbar?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @nachhaltbar</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+                  <li class="copywrite"> &copy;2018 Kevin Dath</li>
+              </ul>
+       </section>
   </footer>
+
+
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>

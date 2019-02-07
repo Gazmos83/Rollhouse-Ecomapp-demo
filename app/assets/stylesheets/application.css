@@ -21,13 +21,7 @@
 
  body {padding: 0;}
  body {background-color: #F7FAD8;}
- .bgimg-2 {
-   background-image: url("../img/Sunset.jpg");
-   height: 100%;
-   position: static;
-   background-position: right;
-   background-repeat: no-repeat;
- }
+
  img {
    border-style: ridge;
    border-radius: 10%;
@@ -93,16 +87,7 @@
    color: #F3F3BE;
  }
 
- #carousel { padding-top: 20px;}
- #carousel img {
-   border: none;
-   border-radius: 0%;
- }
- #carousel h5 {
-   font-size: 4em;
-   padding-bottom: 30%;
-   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
- }
+
 
  #work-section h1 {
    text-align: center;
@@ -142,20 +127,7 @@
    width: 50%;
  }
 
- #about {padding-top: 20px;}
- #about .row h2 {text-align: center;}
- #about .header h1 {
-   text-align: center;
-   font-size: 3em;
-   padding-bottom: 20px;
- }
- #about .main-text {
-   padding-top: 30px;
-   font-family: 'Dosis',sans-serif;
-   clear: both;
-   font-weight:200;
-   font-size: 1.2em;
- }
+
 
 
  #modal-resume {
@@ -167,34 +139,7 @@
    text-align: center;
  }
 
- #faq {
-   padding-top: 10px;
-   padding-bottom: 50px;
- }
- #faq .header {
-   padding-bottom: 30px;
-   text-align: center;
- }
- #faq .card-header {
-   background: #F3F3BE;
-   font-family: 'Poppins', sans-serif;
-   color: #29603B;
-   font-size: 1.8em;
- }
- #faq p {
-   font-size: 1em;
-   font-family: 'Poppins', sans-serif;
-   font-weight: 400;
-   text-shadow: none;
-   color: #29603B;
- }
- #faq .card-header button {
-   font-family: 'Poppins', sans-serif;
-   color: #29603B;
-   font-size: 1.2em;
-   font-weight: 700;
-   margin: auto;
- }
+
  #accordion { padding-bottom: 80px;}
 
  #contact {
@@ -225,11 +170,6 @@
  #contact .row {
    display: flex;
    align-items: center;
- }
- #map1 {
-   height: 300px;
-   width: 100%;
-   border: 10px;
  }
 
  .form-group { width: 100%;}
