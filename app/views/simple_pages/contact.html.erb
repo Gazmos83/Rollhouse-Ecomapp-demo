@@ -1,56 +1,21 @@
-<div class="container-fluid" id="contact">
- <section class="contactimage">
-   <div class="contact">
-    <h1 class="display-4"><i class="fas fa-crosshairs"></i> Contact</h1>
-    <br><br>
-   </div>
-   <div class="row row-fluid">
-    <section class="col-md-4 col-lg-4">
-      <h2><i class="fas fa-map-marker-alt"></i> Headquarters</h>
-      <br><br>
-      <p>Brückenstraße 1b. 101
-        79 </p>
-      <p>Berlin, Germany </p>
-      <br>
-    </section>
+<h1>Contact Us</h1>
 
-    <section class="col-md-4 col-lg-4">
-      <h2><br><i class="fas fa-users"></i> Get Connected</h>
-      <br><br>
-      <p>+4915753490362</p>
-      <p>Kevin.Louis.Dath @gmail.com</p>
-      <br><br>
-    </section>
+<%= flash[:notice] %>
 
-    <section class="col-md-4 col-lg-4">
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" id="telephone" placeholder="Enter your telephone number">
-        </div>
-        <div class="form-group">
-          <textarea minlength="20" placeholder="your message here" type="text" class="form-control message-box" id="message" style="resize:none" cols="40" rows="5"></textarea>
-          <p id="visible-comment char-count"></p>
-          <p id="char-count"></p>
-          <button type="submit" class="btn btn-success" id="button">Submit</button>
-
-        </div>
-      </form>
-    </section>
-
-    <!-- <section class="col-md-6 col-lg-6">
-      <div class="map1">
-         <iframe width="320" height="250" src="https://www.bing.com/maps/embed?h=280&w=325&cp=52.511588~13.417004&lvl=11&typ=d&sty=h&src=SHELL&FORM=MBEDV8" scrolling="no">
-         </iframe>
-     </div>
-    </section> -->
-
-   </div>
- </section>
-
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+  </div>
 </div>
+<%= form.submit "Send", class: "form_label" %>
+<% end %>
