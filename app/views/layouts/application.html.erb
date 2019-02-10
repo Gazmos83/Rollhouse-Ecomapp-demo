@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ecomapp</title>
+    <title>Vacation destinations</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -39,7 +39,16 @@
      </section>
 
   </nav>
+
+  <div class="search-bar">
+  <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+    <%= form.label :q, 'Search for:' %>
+    <%= form.text_field :q, id: 'q', value: params[:q] %>
+    <%= form.submit 'Search' %>
+  <% end %>
   <%= yield %>
+  </div>
+
 
   <footer class="footer-section">
       <section class="container text-center">
