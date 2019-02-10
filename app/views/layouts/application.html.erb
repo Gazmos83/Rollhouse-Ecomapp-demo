@@ -25,16 +25,16 @@
 
      <section class="left">
       <ul class="nav nav-pills">
-       <li class="nav-item"><a class="nav-link" href="simple_pages/landing_page">Home</a>
+       <li class="nav-item"><%= link_to("Home", root_path) %>
        </li>
      </section>
 
      <section class="right">
       <ul class="nav nav-pills">
-       <li class="nav-item"><a class="nav-link" href="simple_pages/about"><i class="fas fa-book-reader"></i> About</a>
-       <li class="nav-item"><a class="nav-link" href="simple_pages/faq">FAQ</a>
-       <li class="nav-item"><a class="nav-link" href="simple_pages/contact"><i class="fas fa-phone"></i> Contact</a>
-      </li>
+       <li class="nav-item"> <%= link_to("About", simple_pages_about_path) %><i class="fas fa-book-reader"></i>
+       <li class="nav-item"> <%= link_to("Products", products_path) %>
+       <li class="nav-item"> <%= link_to("Contact", simple_pages_contact_path) %><i class="fas fa-phone"></i>
+     </ul>
 
      </section>
 
