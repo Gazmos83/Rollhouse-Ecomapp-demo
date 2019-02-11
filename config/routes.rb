@@ -1,25 +1,22 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { registrations: "user_registrations" }
 
-  devise_for :users
-  resources :products
-  resources :orders, only: [:index, :show, :create, :destroy]
-  resources :users, except: [:index]
+  resources :products do
+    resources :comments
+  end
 
-  get 'orders/index'
-  get 'orders/show'
-  get 'products/index'
-  get 'products/show'
+  resources :users
+
+  get 'simple_pages/products'
   get 'simple_pages/about'
-  get 'simple_pages/faq'
-  get 'simple_pages/index'
   get 'simple_pages/contact'
-  get 'simple_pages/landing_page'
-  get 'users/index'
-  get 'devise/sessions/new'
-
+  get 'simple_pages/index'
   post 'simple_pages/thank_you'
+  root 'simple_pages#index'
   post 'payments/create'
 
-  root 'devise/sessions#new'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :orders, only: [:index, :show, :create, :destroy]
+
 end
