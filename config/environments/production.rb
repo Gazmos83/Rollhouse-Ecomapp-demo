@@ -76,6 +76,10 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  # 5.4 devise manual install
+  config.action_mailer.default_url_options = { host: 'localhost', port: 'vacationdesinations.herokuapp.com' }
+
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
