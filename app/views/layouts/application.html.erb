@@ -22,6 +22,7 @@
   </head>
 
   <body data-spy="scroll" data-target=".navbar" class="bgimg-2">
+
     <nav class="navbar navbar-light bg-light full-text" role="navigation" id="nav">
 
      <section class="left">
@@ -35,11 +36,21 @@
        <li class="nav-item"> <%= link_to("About", simple_pages_about_path) %><i class="fas fa-book-reader"></i>
        <li class="nav-item"> <%= link_to("Products", products_path) %>
        <li class="nav-item"> <%= link_to("Contact", simple_pages_contact_path) %><i class="fas fa-phone"></i>
+       <% if user_signed_in? %>
+       <li class="nav-item">
+       <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+       </li>
+       <% else %>
+       <li class="nav-item">
+       <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+       </li>
+       <% end %>
      </ul>
 
      </section>
 
-  </nav>
+    </nav>
+
 
   <div class="search-bar">
   <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
@@ -48,13 +59,13 @@
     <%= form.submit 'Search' %>
   <% end %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
-  <%= yield %>
   </div>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
+  <%= yield %>
   <footer class="footer-section">
       <section class="container text-center">
           <h2 class="footer-title">Follow Me</h2>
