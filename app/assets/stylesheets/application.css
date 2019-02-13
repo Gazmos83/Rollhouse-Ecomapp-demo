@@ -86,8 +86,13 @@
  }
 .nav-item {
   padding-right: 10px;
-  padding-top: 10px;}
- .search-bar {padding-top: 5px}
+  padding-top: 10px;
+}
+ #search-bar {
+   padding-top: 50px;
+   padding-bottom: 20px;
+   float: right;}
+ .form-fld{ width: 300px;}
 
 .alert {padding-top: 70px;}
 h1 {
