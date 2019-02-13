@@ -118,25 +118,6 @@ h1 {
 
  .proj-title { font-weight:100;}
 
- #video {
-   position: relative;
-   width: 50%;
- }
-
-
-
-
- #modal-resume {
-   height: 900px;
-   width: 100%;
- }
- #resume {
-   padding-top: 30px;
-   text-align: center;
- }
-
-
- #accordion { padding-bottom: 80px;}
 
  #contact {
    padding-top: 10px;
@@ -174,12 +155,12 @@ h1 {
  /*Footer Section*/
 
  .footer-section{
-   padding: 10px;
    height: 160px;
-   background-color: #159411;
+   background: linear-gradient(to right, #7fbd98, #229d53);
    color: #fff;
    font-family: 'Poppins', sans-serif;
-   width: 100% !important;
+   padding: none;
+   position: absolute;
  }
  .footer-title {
    font-size: 1.5rem;
@@ -198,7 +179,7 @@ h1 {
    font-size: 1em;
  }
  .footer-list li a {
-   color: #F3F3BE;
+   color: #black;
    font-size: 1.8rem;
    transition: 600ms ease;
    text-decoration: none;
