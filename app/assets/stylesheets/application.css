@@ -89,22 +89,10 @@
   padding-top: 10px;}
  .search-bar {padding-top: 5px}
 
- #work-section h1 {
+.alert {padding-top: 70px;}
+h1 {
    text-align: center;
    padding-top: 100px;
- }
- #work {
-   padding-top: 70px;
-   padding-bottom: 70px;
- }
- #work h1 {text-align: center;}
- #work .row {padding: 1px;}
- .work-img {
-   display: block; /* needed to center the element with margin */
-   margin: auto; /* center the image inside the column if it's smaller */
-   max-width: 500px; /* needs to be set to the width of your image files if they are relatively small */
-   position: relative;
-   padding: 2%; /* is needed for .info position: absolute to work */
  }
 
  .info {
