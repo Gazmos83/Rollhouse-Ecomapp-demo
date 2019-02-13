@@ -84,8 +84,10 @@
    background-color: #B8EDDB;
    color: #F3F3BE;
  }
-
- .search-bar {padding-top: 30px}
+.nav-item {
+  padding-right: 10px;
+  padding-top: 10px;}
+ .search-bar {padding-top: 5px}
 
  #work-section h1 {
    text-align: center;

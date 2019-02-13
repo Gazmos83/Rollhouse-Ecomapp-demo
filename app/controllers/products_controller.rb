@@ -5,22 +5,23 @@ class ProductsController < ApplicationController
   # GET /products.json
 
   def index
-    if params[:q]
-      search_term = params[:q]
-      @products = Product.search(search_term)
-    else
-      @products = Product.all
+     if params[:q]
+       search_term = params[:q]
+       @products = Product.where("name LIKE ?", "%#{search_term}%")
+     else
+       @products = Product.all
     end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+      @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new
   def new
-    @product = Product.new
+      @product = Product.new
   end
 
   # GET /products/1/edit
@@ -30,7 +31,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+      @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
