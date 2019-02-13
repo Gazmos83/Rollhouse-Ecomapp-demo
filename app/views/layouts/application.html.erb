@@ -29,10 +29,16 @@
       <ul class="nav nav-pills">
        <li class="nav-item"><%= link_to("Home", root_path) %>
        </li>
+       <li class="nav-item search-bar"><%= form_with(url: products_path, method: 'get', local: true, class: 'search_bar') do |form| %>
+                 <%= form.submit 'Search', class: 'btn btn-submit' %>
+                 <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-fld' %>
+               <% end %>
+       </li>
      </section>
 
      <section class="right">
       <ul class="nav nav-pills">
+
        <li class="nav-item"> <%= link_to("About", simple_pages_about_path) %><i class="fas fa-book-reader"></i>
        <li class="nav-item"> <%= link_to("Products", products_path) %>
        <li class="nav-item"> <%= link_to("Contact", simple_pages_contact_path) %><i class="fas fa-phone"></i>
@@ -45,25 +51,24 @@
        <%= link_to('Login', new_user_session_path, class: "nav-link") %>
        </li>
        <% end %>
-     </ul>
+      </ul>
 
      </section>
-
     </nav>
 
 
   <div class="search-bar">
-  <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-    <%= form.label :q, 'Search for:' %>
-    <%= form.text_field :q, id: 'q', value: params[:q] %>
-    <%= form.submit 'Search' %>
-  <% end %>
 
 
   </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <p id="notice" class="alert alert-primary"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p id="alert" class="alert alert-primary"><%= alert %></p>
+<% end %>
+
 
   <%= yield %>
   <footer class="footer-section">
