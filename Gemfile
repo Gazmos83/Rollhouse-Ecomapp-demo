@@ -66,3 +66,5 @@ end
 gem 'devise'
 gem 'cancancan', '~> 2.0'
 gem 'figaro'
+gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
+gem 'delayed_job_active_record'
