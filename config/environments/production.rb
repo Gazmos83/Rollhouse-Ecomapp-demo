@@ -78,7 +78,7 @@ Rails.application.configure do
     :user_name      => ENV['postmaster@sandboxda45cd4910f94bad8768d5f95697623a.mailgun.org'],
     :password       => ENV['Cheapmailer83!'],
     :authentication => :plain,
-  }}
+  }
 
   config.active_job.queue_adapter = :delayed_job
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
