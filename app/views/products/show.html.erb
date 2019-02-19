@@ -19,13 +19,15 @@
       </p>
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-6 star-rating">
+      <div class="col-sm-12 col-md-6 col-lg-6 star-rating productindex">
       <p>Review score:<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></p>
-        </div>
+      </div>
+        <div class="commentsdisplay"
         <% if !@product.highest_rating_comment.nil? %>
         <%= @product.highest_rating_comment.body %>
         <% end %>
         <%= render 'shared/comments' %>
+        </div>
       </div>
     </div>
    </div>
