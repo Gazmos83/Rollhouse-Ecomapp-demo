@@ -27,6 +27,7 @@
         <%= @product.highest_rating_comment.body %>
         <% end %>
         <%= render 'shared/comments' %>
+        <%= will_paginate @comments %>
         </div>
       </div>
     </div>
