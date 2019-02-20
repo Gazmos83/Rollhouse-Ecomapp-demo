@@ -45,7 +45,6 @@ class CommentsController < ApplicationController
       format.html { redirect_to @product, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
 
-    redirect_to product
   end
 end
 
