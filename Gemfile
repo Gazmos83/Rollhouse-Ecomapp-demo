@@ -71,5 +71,8 @@ gem 'figaro'
 gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'delayed_job_active_record'
 
-## Gemfile for Rails 3+, Sinatra, and Merb
+# Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
+
+# 6.3 functional testing
+gem 'rails-controller-testing'
