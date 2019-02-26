@@ -3,7 +3,7 @@ require 'rails_helper'
 describe CommentsController, type: :controller do
 
   before do
-    @user = User.create!(email: "peter@example.com", password: "1234567890")
+   @user = FactoryBot.create(:user)
   end
 
   let(:product){ Product.create!(name: "Malapascua")}

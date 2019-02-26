@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe OrdersController, type: :controller do
   before do
-    @user = User.create!(email: "peter@example.com", password: "1234567890")
+   @user = FactoryBot.create(:user)
   end
     let(:product) { Product.create!(name:"Nunya bidness", description:"it's so warm here", image_url:"row (1).jpg" )}
 
