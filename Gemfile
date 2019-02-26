@@ -77,3 +77,5 @@ gem 'will_paginate', '~> 3.1.0'
 
 # 6.3 functional testing
 gem 'rails-controller-testing'
+# 6.5 Initializing Stripe
+gem 'stripe'
