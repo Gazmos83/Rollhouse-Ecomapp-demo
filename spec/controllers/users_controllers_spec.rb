@@ -15,7 +15,7 @@ describe UsersController do
       it 'loads correct user details' do
         get :show, params: { id: @user.id }
         expect(assigns(:user)).to eq @user
-  
+        expect(response).to have_http_status(200)
       end
 
       it 'cant access other users show page' do
