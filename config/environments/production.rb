@@ -74,7 +74,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :domain         => ENV['MAILGUN_SMTP_DOMAIN'],
+    :domain         => 'vacationdestinations.heroku.com',
     :user_name      => ENV['MAILGUN_SMTP_USERNAME'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
     :authentication => :plain,
