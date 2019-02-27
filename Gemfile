@@ -45,6 +45,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.3.6'
   gem 'factory_bot_rails', '~> 4.0'
+  gem 'better_errors'
 end
 
 group :development do
@@ -55,7 +56,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.8'
-  gem 'factory_bot_rails', '~> 4.0'
 end
 
 
@@ -63,7 +63,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.20'
+  gem 'rails_12factor'
 end
 
 gem 'devise'
