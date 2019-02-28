@@ -69,17 +69,20 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'vacationdestinations.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  # SMTP settings for mailgun
-  ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :domain         => 'vacationdestinations.heroku.com',
-    :user_name      => ENV['MAILGUN_SMTP_USERNAME'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :authentication => :plain,
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "myapp.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
-  ActionMailer::Base.delivery_method = :smtp
 
   config.active_job.queue_adapter = :delayed_job
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
