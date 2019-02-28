@@ -32,3 +32,4 @@
 
 # Ignore secret file
 /config/application.yml
+/config/secrets.yml
