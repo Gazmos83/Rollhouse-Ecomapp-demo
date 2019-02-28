@@ -80,3 +80,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'rails-controller-testing'
 # 6.5 Initializing Stripe
 gem 'stripe'
+# 6.8 security feature
+gem "brakeman"
