@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
          format.json{
            render :show, status: :created, location: @product
          }
+         format.js
 
        else
 
