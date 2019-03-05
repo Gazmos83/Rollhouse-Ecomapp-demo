@@ -1,5 +1,5 @@
 
-
+<% cache product do %>
 <div class="col-sm col-md-6 col-lg-4 productindex">
 
         <a href="#"><h3><%= product.name %></h3></a>
@@ -13,3 +13,4 @@
         <td><% if signed_in? && current_user.admin? %><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
         </td>
 </div><!-- /col -->
+<% end %>

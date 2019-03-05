@@ -82,3 +82,5 @@ gem 'rails-controller-testing'
 gem 'stripe'
 # 6.8 security feature
 gem "brakeman"
+#6.11 caching
+gem 'dalli'

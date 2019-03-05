@@ -16,12 +16,14 @@
      <% end %>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6 productinfo-right">
-      <p class="productname-show">
+      <% cache @product do %>
+      <p>
         <%= @product.name %>
       </p>
-      <p class="product-gallery-decription">
+      <p>
         <%= @product.description %>
       </p>
+      <% end %>
       <p class="text-bold">Overview</p>
       <p class="product-galleryprice-tag">
         <%= number_to_currency(@product.price, :unit => "€") %>
