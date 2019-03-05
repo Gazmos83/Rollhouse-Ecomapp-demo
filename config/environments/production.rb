@@ -66,7 +66,7 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
-
+  config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "ecomapp_#{Rails.env}"
