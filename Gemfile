@@ -84,3 +84,5 @@ gem 'stripe'
 gem "brakeman"
 #6.11 caching
 gem 'dalli'
+#6.12 complex perform_caching
+gem 'redis-rails'
