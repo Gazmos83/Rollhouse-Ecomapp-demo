@@ -32,8 +32,9 @@
       <div class="star-rating">
       <p>Review score:<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></p>
         </div>
-        <% if !@product.highest_rating_comment.nil? %>
-        <%= @product.highest_rating_comment.body %>
+
+         <p><% if !@product.highest_rating_comment.nil? %></p>
+         <p><%= @product.highest_rating_comment.body %></p>
         <% end %>
 
         <%= render 'shared/comments' %>
