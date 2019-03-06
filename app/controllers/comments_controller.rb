@@ -3,13 +3,12 @@ class CommentsController < ApplicationController
      @product = Product.find(params[:product_id])
      @comment = @product.comments.new(comment_params)
      @comment.user = current_user
-     # @comment.save
-     # redirect_to product_path(@product)
+
 
      respond_to do |format|
 
        if @comment.save
-
+         ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
          # save was OK
          format.html{
            redirect_to @product, notice: "Your review has been added to #{@product.name}."
@@ -17,6 +16,7 @@ class CommentsController < ApplicationController
          format.json{
            render :show, status: :created, location: @product
          }
+
          format.js
 
        else
