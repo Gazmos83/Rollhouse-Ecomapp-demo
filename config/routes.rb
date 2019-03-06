@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :users
 
+  mount ActionCable.server => '/cable'
+
 
   get 'simple_pages/products'
   get 'simple_pages/about'

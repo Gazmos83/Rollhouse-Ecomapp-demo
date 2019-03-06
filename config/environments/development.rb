@@ -62,4 +62,6 @@ Rails.application.configure do
   # 5.4 devise manual setup
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # 6.13 Generate plain JavaScript instead of Coffeescript for ActionCable
+  config.app_generators.javascript_engine = :javascript
 end
