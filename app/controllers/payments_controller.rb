@@ -16,7 +16,9 @@ class PaymentsController < ApplicationController
       )
 
       if charge.paid
-        Order.create(product_id: @product.id,user_id: @user.id, total: @product.price)
+        order = Order.create(product_id: @product.id,user_id: @user.id, total: @product.price)
+        #order mail should be sent after order is created
+        UserMailer.order_confirmation(order).deliver_later
         flash[:success] = "Your payment was processed successfully"
       end
 
