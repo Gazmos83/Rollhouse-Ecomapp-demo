@@ -18,6 +18,5 @@ var refreshRating = function() {
 
 $(document).on('turbolinks:load ajax:success', function() {
     refreshRating();
-
     $('.img-zoom').elevateZoom();
 });

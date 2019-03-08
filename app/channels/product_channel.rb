@@ -2,11 +2,22 @@
 class ProductChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
+<<<<<<< HEAD
       stream_from "product_channel"
     # stream_for data["product_id"]
+=======
+    # product_channel is a global feature
+    # stream_from "product_channel"
+
+>>>>>>> Custom_methods
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
+  end
+
+  def listen(data)
+    stop_all_streams
+    stream_for data["product_id"]
   end
 end
