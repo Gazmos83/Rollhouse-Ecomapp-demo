@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users
+  resources :orders, only:[:index, :destroy]
+
 
   mount ActionCable.server => '/cable'
 
 
-  get 'simple_pages/products'
   get 'simple_pages/about'
   get 'simple_pages/contact'
   get 'simple_pages/index'
