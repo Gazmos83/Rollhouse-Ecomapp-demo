@@ -15,7 +15,7 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
 
   }
 
-=======
+
   // Called when there's incoming data on the websocket for this channel
   $(".alert.alert-info").show();
   $('.product-reviews').prepend(data.comment);
@@ -27,7 +27,7 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
   listen_to_comments: function() {
   return this.perform('listen', {product_id: $("[data-product-id]").data("product-id")});
 }
->>>>>>> Custom_methods
+
 });
   // Calls listen_to_comments when user opens page
 $(document).on('turbolinks:load', function() {
