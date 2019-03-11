@@ -3,11 +3,8 @@ class ProductChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
 
-      stream_from "product_channel"
-    # stream_for data["product_id"]
-
-    # product_channel is a global feature
     # stream_from "product_channel"
+      stream_for data["product_id"]
 
 
   end
