@@ -36,27 +36,41 @@
         <ul class="nav nav-pills">
 
           <li class="nav-item"> <%= link_to("About", simple_pages_about_path) %><i class="fas fa-book-reader"></i>
-            <li class="nav-item"> <%= link_to("Products", products_path) %>
-              <li class="nav-item"> <%= link_to("Contact", simple_pages_contact_path) %><i class="fas fa-phone"></i>
-                <% if user_signed_in? %>
-                <li class="nav-item">
-                  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav") %>
-                </li>
-                <% else %>
-                <li class="nav-item">
-                  <%= link_to('Login', new_user_session_path, class: "nav") %>
-                </li>
-                <% end %>
-                <li id="search-bar">
-                  <%= form_with(url: products_path, method: 'get', local: true, class: 'search_bar') do |form| %>
-                  <%= form.submit 'Search', class: 'btn btn-submit' %>
-                  <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-fld' %>
-                  <% end %>
-                </li>
-              </ul>
+          <li class="nav-item"> <%= link_to("Products", products_path) %>
+          <li class="nav-item"> <%= link_to("Contact", simple_pages_contact_path) %><i class="fas fa-phone"></i>
+          <% if user_signed_in? %>
+          <li class="nav-item">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav") %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav") %>
+          </li>
+          <% end %>
+          <li id="search-bar">
+          <%= form_with(url: products_path, method: 'get', local: true, class: 'search_bar') do |form| %>
+          <%= form.submit 'Search', class: 'btn btn-submit' %>
+          <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-fld' %>
+          <% end %>
+          </li>
+        </ul>
+      </section>
+    </nav>
 
-            </section>
-          </nav>
+    <nav class="navbar navbar-light bg-light short-text" role="navigation" id="nav">
+
+       <section class="center">
+
+        <ul class="nav nav-pills">
+         <li class="nav-item"><a class="nav-link" href="#carousel"><i class="fas fa-home"></i></a>
+         <li class="nav-item"><a class="nav-link" href="#work-section"><i class="fas fa-briefcase"></i></a>
+         <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-graduation-cap"></i></a>
+         <li class="nav-item"><a class="nav-link" href="#faq"><i class="fas fa-question-circle"></i></a>
+         <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-phone"></i></a>
+         </li>
+       </section>
+  </nav>
+
 
           <% if notice %>
           <p id="notice" class="alert alert-primary"><%= notice %></p>
@@ -67,7 +81,7 @@
           <footer class="container-fluid footer-section">
             <section class="text-center">
 
-                <p> &copy;2018 Kevin Dath</p>
+              <p> &copy;2018 Kevin Dath</p>
 
             </section>
           </footer>
