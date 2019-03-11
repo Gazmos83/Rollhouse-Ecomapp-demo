@@ -16,17 +16,17 @@ describe SimplePagesController, type: :controller do
     end
   end
   context 'GET #landing_page' do
-    it 'renders the index template' do
+    it 'renders the landing_page template' do
       get :index
       expect(response).to be_ok
       expect(response).to render_template('landing_page')
     end
   end
-  context 'GET #index' do
-    it 'renders the index template' do
+  context 'GET #contact' do
+    it 'renders the contact template' do
       get :index
       expect(response).to be_ok
-      expect(response).to render_template('index')
+      expect(response).to render_template('contact')
     end
   end
 end
