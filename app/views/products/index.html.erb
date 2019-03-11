@@ -7,12 +7,9 @@
 <div class="container-fluid">
   <div class="row">
     <% if @products.length > 0 %>
-     <% cache(cache_key_for_products) do %>
-       <%= render @products %>
-     <% end %>
-   <% elsif params[:q] %>
+    <% cache(cache_key_for_products) do %>
+    <%= render @products %><% end %>
+    <% elsif params[:q] %><% end %>
   </div>
 </div>
-
-<%= link_to 'New Product', new_product_path %>
-  <% end %>
+<% if signed_in? && current_user.admin? %><%= link_to 'New Product', new_product_path %><% end %>
