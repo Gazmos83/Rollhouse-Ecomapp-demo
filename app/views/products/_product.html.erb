@@ -1,16 +1,16 @@
 
-<% cache product do %>
-<div class="col-sm col-md-6 col-lg-4 productindex">
+  <% cache product do %>
+  <div class="col-sm-12 col-md-6 col-lg-4 productindex ">
 
-        <a href="#"><h3><%= link_to product.name, product %></h3></a>
-        <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
-        <p class="description"><%= product.description %></p>
-        <p><%= product.colour %></p>
-        <strong><td><%= number_to_currency(product.price, :unit => "€") %></td></strong>
-        <br>
-        <td><% if signed_in? && current_user.admin? %><%= link_to 'Edit', edit_product_path(product) %><% end %></td>
-        <td><% if signed_in? && current_user.admin? %><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
-        </td>
-        <% end %>
+    <a href="#"><h3><%= link_to product.name, product %></h3></a>
+    <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
+    <p class="description"><%= product.description %></p>
+    <p><%= product.colour %></p>
+    <strong><td><%= number_to_currency(product.price, :unit => "€") %></td></strong>
+    <br>
+    <td><% if signed_in? && current_user.admin? %><%= link_to 'Edit', edit_product_path(product) %><% end %></td>
+    <td><% if signed_in? && current_user.admin? %><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+    </td>
+    <% end %>
 
-</div><!-- /col -->
+  </div><!-- /col -->
