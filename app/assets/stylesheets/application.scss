@@ -33,18 +33,35 @@
    border-color: #F3F3BE;
    padding: 5px;
  }
- h1, h2, h3 {
+ h1{
    font-family: 'Oswald', sans-serif;
    font-weight: 900;
-   // font size: 2.5em;
    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
    color: #F3F3BE;
+  }
+  h2{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #6BC9E6;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #6BC9E6;
+
+
   }
  h4 {
    color: #6BC9E6;
    font-size: 2.3em;
    font-weight: bold;
  }
+
  p, li {
    font-family: 'Poppins', Arial, sans-serif;
    font-weight: 900;
@@ -93,7 +110,20 @@
   padding-right: 10px;
   padding-top: 10px;
 }
+ /*Simple-pages */
 
+ /*Landing-page */
+
+ .landing-name {
+   padding: 0px 0px 350px 30px;
+   float: left;
+   font-weight: 900;
+ }
+ .landing-price {
+   padding-top: 200px;
+   color: white;
+   font-weight: 900;
+ }
 
 .alerts {padding-top: 35px;}
 .alert p {padding-top: 25px;}
@@ -119,6 +149,11 @@
 
  .star-rating { float: left;}
  .body-rating {padding-top: 10px;}
+
+ .product {
+   padding-top: 80px;
+   text-align: center;
+ }
 
  /*Footer Section*/
 
