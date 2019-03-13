@@ -29,10 +29,9 @@
  }
  img-fluid {padding-top: 30px;}
  img {
-   border-style: ridge;
-   border-radius: 10%;
+
    border-color: #F3F3BE;
-   padding: 5px;
+
  }
  h1{
    font-family: 'Oswald', sans-serif;
@@ -117,6 +116,7 @@
 
  /*Landing-page */
 
+
  .landing-name {
    padding: 0px 0px 350px 30px;
    float: left;
@@ -153,10 +153,7 @@
  .star-rating { float: left;}
  .body-rating {padding-top: 10px;}
 
- .product {
-   padding-top: 80px;
-   text-align: center;
- }
+ .product { text-align: center;}
 
  /*Footer Section*/
 

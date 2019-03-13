@@ -2,7 +2,7 @@
   <% cache product do %>
   <div class="col-sm-12 col-md-6 col-lg-4 productindex ">
 
-    <a href="#"><h3><%= link_to product.name, product %></h3></a>
+    <a href="#"><h4><%= link_to product.name, product %></h4></a>
     <%= image_tag(product.image_url, class: "img-fluid") if product.image_url %>
     <p class="description"><%= product.description %></p>
     <p><%= product.colour %></p>
