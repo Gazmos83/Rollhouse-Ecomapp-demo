@@ -17,5 +17,8 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    if Order.find(params[:id]).destroy
+           redirect_to orders_path
+    end
   end
 end

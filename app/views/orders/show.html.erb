@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container margin">
   <h2>Order Information</h2>
   <strong>Order ID: </strong><%= @order.id %>
   <strong>Product Name: </strong><%= @order.product.name %>
   <strong>Product Price: </strong><%= number_to_currency(@order.product.price/100.to_f) %>
   <strong>Total Price: </strong><%= number_to_currency(@order.total/100.to_f) %>
+    <td><% if signed_in? && current_user.admin? %><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
 </div>

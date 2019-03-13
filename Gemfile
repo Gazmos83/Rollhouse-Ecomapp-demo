@@ -86,3 +86,5 @@ gem "brakeman"
 gem 'dalli'
 #6.12 complex perform_caching
 gem 'redis-rails'
+# font awesome link functiona
+gem "font-awesome-rails"

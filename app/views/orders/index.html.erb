@@ -1,14 +1,16 @@
 <!-- Product Details Display -->
-
-<div class="row">
-  <% @orders.each do |order| %>
+<div class= "container">
+  <div class="row margin">
+    <% @orders.each do |order| %>
     <div class="col-sm">
-      <h1>
+      <h2>
         Order # <%= order.id %>:
         <%= link_to order.product.name, order %>
-      </h1>
+      </h2>
       <p><%= order.product.description %></p>
-      <strong>$ <%= order.product.price %></strong>
+      <strong>$ <%= order.product.price %></strong><br><br>
+        <td><% if signed_in? %><%= link_to raw('<i class="fa fa-trash-alt"></i>'), order, method: :delete, data: { confirm: 'Are you sure you want to delete this item?' } %><% end %>
     </div><!-- /col -->
-  <% end %>
+    <% end %>
+  </div>
 </div>
