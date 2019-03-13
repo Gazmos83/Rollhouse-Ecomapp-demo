@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       if @comment.save
         # ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
         # save was OK
-
+        ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment}), average_rating: @product.average_rating
         format.html{
           redirect_to @product, notice: "Your review has been added to #{@product.name}."
         }
