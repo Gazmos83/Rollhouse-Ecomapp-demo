@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'simple_pages/contact'
   get 'simple_pages/index'
   get 'orders/show'
+  get 'users/index'
   post 'simple_pages/thank_you'
 
   root 'simple_pages#landing_page'

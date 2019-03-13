@@ -51,6 +51,8 @@
          <% else %>
          <li class="nav-item"><%= link_to('Login', new_user_session_path, class: "nav") %></li>
          <% end %>
+         <% if user_signed_in? %>
+         <li class="nav-item"><%= link_to('Account settings', users_path) %></li><% end %>
          <li id="search-bar">
          <%= form_with(url: products_path, method: 'get', local: true, class: 'search_bar') do |form| %>
          <%= form.submit 'Search', class: 'btn btn-submit' %>
