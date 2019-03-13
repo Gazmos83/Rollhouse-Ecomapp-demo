@@ -18,7 +18,8 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
 
   // jQuery code selects element and then grabs the value of the data-product-id attribute
   listen_to_comments: function() {
-  return this.perform('listen', {product_id: $("[data-product-id]").data("product-id")});
+  return this.perform('listen', {product_id: $("[data-product-id]").data("product-id")
+});
 }
 
 });
