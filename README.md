@@ -1,5 +1,3 @@
-# README
-
 eCommerce Web-Application
 
 This is a simple webshop using ordinary features which can be found in most webshop applications.
