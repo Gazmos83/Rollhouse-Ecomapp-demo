@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+eCommerce Web-Application
 
-Things you may want to cover:
+This is a simple webshop using ordinary features which can be found in most webshop applications.
 
-* Ruby version
+Technologies
 
-* System dependencies
+Ruby 2.5.1
+Rails 5.2.1
+SQLite3 for development and PostgreSQL for production.
 
-* Configuration
+Features
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+CRUD (create / read / update / delete) on products
+Creating / deleting comments on product page
+Real-time updates with ActionCable when a user posts a new comment
+Creating orders with and payments with Stripe
+Pagination on comments listing
+Searching on products
+Authentication with Devise and authorizations (users, admins)
+Creating user account
+Update user profile (incl. avatar image saved on Amazon S3) and changing password
+Sending E-mails
+Application ready for production
+The Website can be reached with the following link: https://vacationdestinations.herokuapp.com/
