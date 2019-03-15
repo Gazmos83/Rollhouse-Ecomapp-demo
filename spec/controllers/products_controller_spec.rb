@@ -18,6 +18,7 @@ describe ProductsController, type: :controller do
     it "shows products page" do
       get :show, params: {id: product.id}
       expect(response).to be_ok
+        expect(response).to render_template('show')
     end
   end
 
@@ -28,6 +29,7 @@ describe ProductsController, type: :controller do
     it "redirects to new product page" do
       get :new, params: {id: @product}
       expect(response).to be_ok
+        expect(response).to render_template('new')
     end
   end
 
@@ -38,6 +40,7 @@ describe ProductsController, type: :controller do
     it "redirects to edit page" do
       get :edit, params: {id: product.id}
       expect(response).to be_ok
+      expect(response).to render_template('edit')
     end
   end
 
