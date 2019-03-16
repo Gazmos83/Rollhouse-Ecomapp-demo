@@ -1,4 +1,4 @@
-<div class="alerts">
+<div class="alerts margin">
   <% if alert %>
     <div class="alert alert-danger" id="deviseAlert"><%= alert %></div>
   <% elsif notice %>
@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<div class="login">
+<div class="login margin">
 <h2 class="logintitle">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
