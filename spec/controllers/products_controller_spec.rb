@@ -3,68 +3,67 @@ require 'rails_helper'
 describe ProductsController, type: :controller do
 
   before do
-      @user = FactoryBot.create(:user)
-      @admin = FactoryBot.create(:admin)
-      @product = FactoryBot.create(:product)
+    @product = FactoryBot.create(:product)
+    @admin = FactoryBot.create(:admin)
+
   end
 
-  describe "GET #index" do
-    it "renders the index template" do
-      get :index
-      expect(response).to be_ok
-      expect(response).to render_template('index')
-    end
-  end
+  describe "products" do
 
-  describe "GET #show" do
-    it "shows products page" do
-      get :show, params: {id: @product}
-      expect(response).to be_ok
-      expect(response).to render_template('show')
-    end
-  end
+    context "when a user is not logged in" do
 
-  describe "GET #new" do
-    before do
-      sign_in @user
+      it "can access index" do
+        get :index
+        expect(response).to have_http_status(200)
+      end
+
+      it "can access show" do
+        get :show, params: { id: @product.id }
+        expect(response).to have_http_status(200)
+      end
+
     end
-    it "renders new product page" do
-      get :new, params: {id: @product}
-      expect(response).to be_ok
+
+    context 'when user is logged in as admin' do
+
+      before do
+        sign_in @admin
+      end
+
+      it "can access edit" do
+        get :edit, params: { id: @product.id }
+        expect(response).to render_template('edit')
+      end
+
+      it "can update a product" do
+         put :update, params: { id: @product.id, product: { name: "Edited Name", description: "Edited", price: 200 } }
+         @product.reload
+         expect(@product.description).to eq("Edited")
+         expect(response).to redirect_to @product
+      end
+
+      it "can delete a product" do
+        delete :destroy, params: { id: @product.id }
+        expect(response).to have_http_status(302)
+        expect(assigns(:product)).to eq @product
+      end
+
+      it "can access new" do
+        get :new
         expect(response).to render_template('new')
+      end
+
+      it "can create a new product" do
+        expect { post :create, params: { product: FactoryBot.attributes_for(:product, name: "some beautiful place", price: 1500), product_id: @product.id }}.to change(Product, :count).by(1)
+      end
+    end
+
+    context 'search function' do
+
+      it "returns the matching product" do
+        @result = Product.search("Mala")
+        expect(@result.first.name).to eq(@product.name)
+      end
     end
   end
-
-  describe "GET #edit" do
-    before do
-      sign_in @user
-    end
-    it "renders newly edited page" do
-      get :edit, params: {id: @product}
-      expect(response).to be_ok
-      expect(response).to render_template('edit')
-    end
-  end
-
-  describe "POST #create" do
-    before do
-      sign_in @user
-    end
-    it "creates a new product" do
-      post :create, params: {id: @product }
-      expect(response).to render_template('show')
-    end
-  end
-
-  describe "PUT #update" do
-    before do
-      sign_in @user
-    end
-    it "destroys product" do
-      delete :destroy, params: {id: @product}
-      expect(response).to redirect_to products_url
-    end
-  end
-
-
 end
