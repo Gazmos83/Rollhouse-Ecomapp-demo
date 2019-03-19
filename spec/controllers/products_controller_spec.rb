@@ -28,7 +28,7 @@ describe ProductsController, type: :controller do
     before do
       sign_in @user
     end
-    it "redirects to new product page" do
+    it "renders new product page" do
       get :new, params: {id: @product}
       expect(response).to be_ok
         expect(response).to render_template('new')
@@ -39,7 +39,7 @@ describe ProductsController, type: :controller do
     before do
       sign_in @user
     end
-    it "redirects to edit page" do
+    it "renders newly edited page" do
       get :edit, params: {id: @product}
       expect(response).to be_ok
       expect(response).to render_template('edit')
@@ -48,21 +48,21 @@ describe ProductsController, type: :controller do
 
   describe "POST #create" do
     before do
-      sign_in @admin
+      sign_in @user
     end
     it "creates a new product" do
       post :create, params: {id: @product }
-      expect(response).to be_successful
+      expect(response).to render_template('show')
     end
   end
 
   describe "PUT #update" do
     before do
-      sign_in @admin
+      sign_in @user
     end
     it "destroys product" do
-      delete :destroy, params: {id: product.id}
-      expect(response).to redirect_to products_path
+      delete :destroy, params: {id: @product}
+      expect(response).to redirect_to products_url
     end
   end
 
