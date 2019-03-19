@@ -5,6 +5,7 @@ describe ProductsController, type: :controller do
   before do
     @product = FactoryBot.create(:product)
     @admin = FactoryBot.create(:admin)
+    @user = FactoryBot.create(:user)
 
   end
 
@@ -57,6 +58,34 @@ describe ProductsController, type: :controller do
         expect { post :create, params: { product: FactoryBot.attributes_for(:product, name: "some beautiful place", price: 1500), product_id: @product.id }}.to change(Product, :count).by(1)
       end
     end
+
+    context 'when user is looged in as user' do
+
+      before do
+        sign_in @user
+      end
+
+      it "can not access edit" do
+        get :edit, params: { id: @product.id }
+        expect(response).to have_http_status(302)
+      end
+
+
+      it "can not delete a product" do
+        delete :destroy, params: { id: @product.id }
+        expect(response).to have_http_status(302)
+      end
+
+      it "can not access new" do
+        get :new
+        expect(response).to have_http_status(302)
+      end
+
+      it "can not create a new product" do
+        expect { post :create, params: { product: FactoryBot.attributes_for(:product, name: "some beautiful place", price: 1500), product_id: @product.id }}.to change(Product, :count).by(0)
+      end
+    end
+
 
     context 'search function' do
 
