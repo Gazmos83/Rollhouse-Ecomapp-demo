@@ -45,8 +45,7 @@ describe ProductsController, type: :controller do
 
       it "can delete a product" do
         delete :destroy, params: { id: @product.id }
-        expect(response).to have_http_status(302)
-        expect(assigns(:product)).to eq @product
+        expect(response).to redirect_to products_url
       end
 
       it "can access new" do
@@ -73,7 +72,7 @@ describe ProductsController, type: :controller do
 
       it "can not delete a product" do
         delete :destroy, params: { id: @product.id }
-        expect(response).to have_http_status(302)
+        expect(response).to redirect_to products_url
       end
 
       it "can not access new" do
