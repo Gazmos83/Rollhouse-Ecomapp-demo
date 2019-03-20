@@ -1,57 +1,50 @@
 <%= form_with(model: product, local: true) do |form| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<% if @product.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
 <div class="container-fluid">
   <div class="row">
-   <section class="col-sm-12 col-md-4 col-lg-4">
-  <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
+    <section class="col-sm-12 col-md-6 col-lg-6 field">
+
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+
     </section>
-    <section class="col-sm-12 col-md-4 col-lg-4">
-  <div class="field">
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </div>
-   </section>
-   <section class="col-sm-12 col-md-4 col-lg-4">
-  <div class="field">
-    <%= form.label :image_url %><br>
-    <%= form.text_field :image_url %>
-  </div>
-   </section>
-   <section class="col-sm-12 col-md-4 col-lg-4">
-  <div class="field">
-    <%= form.label :colour %><br>
-    <%= form.text_field :colour %>
-  </div>
-   </section>
-   <section class="col-sm-12 col-md-4 col-lg-4">
-  <div class="field">
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
-  </div>
+    <section class="col-sm-12 col-md-6 col-lg-6 field">
 
+      <%= form.label :image_url %><br>
+      <%= form.text_field :image_url %>
 
-
-   </section>
- </section>
- </div>
- </div>
-  <div class="actions">
-    <%= form.submit %>
+    </section>
   </div>
+  <div class="row">
+    <section class="col-sm-12 col-md-6 col-lg-6 field">
+
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+
+    </section>
+    <section class="col-sm-12 col-md-6 col-lg-6 field">
+
+      <%= form.label :price %><br>
+      <%= form.text_field :price %>
+
+    </section>
+  </div>
+</div>
+</div>
+<div class="actions margin">
+  <%= form.submit %>
+</div>
 
 <% end %>
 </section>
