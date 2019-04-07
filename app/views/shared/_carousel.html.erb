@@ -1,4 +1,5 @@
-<div>
+
+<div class="page-wrap" id="landing_page">
 
   <div id="carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -17,10 +18,11 @@
         <%= image_tag(product.image_url, class: "img-fluid", id: "carousel_images") %>
 
         <div class="carousel-caption d-none d-md-block">
-          <<h3 class="landing-name"><%= link_to product.name, product %><% end %>  </h3>
+          <h4><%= link_to product.name, product %></h4>
+          <p><%= link_to product.price, product %></p>
         </div>
       </div>
-
+      <% end %>
     </div>
 
     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
