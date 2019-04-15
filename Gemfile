@@ -77,6 +77,7 @@ gem 'delayed_job_active_record'
 # Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 # 6.3 functional testing
 gem 'rails-controller-testing'
