@@ -18,6 +18,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -27,7 +28,7 @@
 
  /* universal */
 
-
+.short-text {display: none;}
  body {
     padding-top: 60px;
   }
@@ -46,6 +47,8 @@
       margin-bottom: 10px;
     }
   }
+
+  .margin { margin: 0% 5% 0% 5%;}
 
   /* typography */
 
@@ -94,6 +97,8 @@
   .navrbar-inverse a {
     color: white;
   }
+
+  .navbar-inverse .navbar-nav > li > a { color: white;}
 
   body .links {
     font-size: 1.3em;
@@ -252,3 +257,18 @@
      height: 1%; }
    *:first-child + html .digg_pagination {
      overflow: hidden; }
+
+@media (max-width: 770px) {
+  .full-text { display: none; }
+  .short-text {
+    display: inline-block;
+    position: fixed;
+    padding-left: 55px;
+    font-size: 1.2em;
+      }
+  .dropdown-toggle, {
+    float: right;
+    margin-right: 10%;}
+  .dropdown-menu { margin-left: 75%;}
+
+}

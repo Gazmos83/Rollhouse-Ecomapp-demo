@@ -1,17 +1,20 @@
-<div class= "margin">
+
   <p id="notice"><%= notice %></p>
 
   <h2 class="product">Products</h2>
 
   <!-- Product menu -->
 
-  <div class="container-fluid">
+  <div class="container-fluid margin">
     <div class="row">
       <% if @products.length > 0 %>
       <% cache(cache_key_for_products) do %>
       <%= render @products %><% end %>
       <% elsif params[:q] %><% end %>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <% if signed_in? && current_user.admin? %><%= link_to 'New Product', new_product_path %><% end %>
+      </div>
+    </div>
   </div>
-  <% if signed_in? && current_user.admin? %><%= link_to 'New Product', new_product_path %><% end %>
-</div>
