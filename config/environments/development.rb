@@ -45,6 +45,10 @@ Rails.application.configure do
         password: ENV["GMAIL_PASSWORD"]
 }
 
+  host = 'localhost:3000'
+
+#Use this if developing on localhost.
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

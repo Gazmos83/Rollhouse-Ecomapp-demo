@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     end
 
     def welcome(user)
-    @appname = "vacationdestinations"
+    @appname = "RollHouse"
     @user = user
     mail(to: user.email, subject: "Welcome to #{@appname}!")
     end
@@ -20,5 +20,5 @@ class UserMailer < ApplicationMailer
     mail(to: order.user.email,
     subject: "Order confirmation")
     end
-    
+
   end
