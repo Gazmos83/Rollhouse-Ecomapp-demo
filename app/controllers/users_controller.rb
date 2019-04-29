@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         # Sends email to user shortly afer the user is created.
         SendEmailJob.set(wait: 20.seconds).perform_later(@user)
 
-        format.html { redirect_to @user, notice: 'Welcome aboard!!' }
+        format.html { redirect_to @user, notice: 'Welcome to RollHouse!!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

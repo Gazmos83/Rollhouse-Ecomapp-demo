@@ -1,32 +1,36 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+/*Products*/
 
 .new_comment {padding: 20px 0px 20px 0px}
 .productname {
-    font-size: 2.0em;
-    padding-top: 15px;
+  font-size: 2.0em;
+  padding-top: 15px;
 }
 .productindex {
-    padding-top: 15px;
-    padding-bottom: 10px;
-  }
-  .description {
-    padding-top: 15px;
-  }
-
-
-
-#average-rating {padding-bottom: 50px;}
-
- .rated {padding: 15px;}
- h2 {padding-top: 30px;}
-
- img {float: left;
- padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
-.comment-name {float: right;
-padding: 20px;
-text-align: left;}
+.description {
+  padding-top: 15px;
+}
+#average-rating {
+  padding-bottom: 30px;}
+
+.rated {padding: 8px;}
+h2 {padding-top: 25px;}
+img {
+  float: left;
+  padding: 10px;
+}
+.comment-name { padding: 5px;}
 .comment-rating {float: left;}
+hr {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+.product-reviews { padding: 30px;}
+.product-img {
+max-width: 98%;}
+.show-page-padding {margin: 5%;}

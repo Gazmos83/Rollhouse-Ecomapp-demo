@@ -1,51 +1,22 @@
-<div class="index-content margin">
+
+<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+<div class="index-content">
   <div class="container">
-    <div class="row product" data-product-id="<%= @product.id %>">
-
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <%= image_tag(@product.image_url, width: "350", class: "img-fluid img-zoom", data_zoom_image:"@product.image_url") if @product.image_url%>
-      <%= link_to 'Edit', edit_product_path(@product) %>
-
-        <% cache @product do %>
-        <p>
-          <%= @product.name %>
-        </p>
-        <p>
-          <%= @product.description %>
-        </p>
-        <% end %>
-        <p class="text-bold">Overview</p>
-        <p class="price-tag">
-          <%= number_to_currency(@product.price, :unit => "€") %>
-        </p>
-      </div>
-      <div class="col-sm-12  col-md-6 col-lg-6">
+    <div class="row" data-product-id="<%= @product.id %>">
+        <%= render 'products/product_display' %>
+      <div class="col-lg-6">
         <%= render 'shared/new_comment' %>
         <%= form_with(url: '/payments/create') do |form| %>
-        <%= render partial: "shared/stripe_checkout_button" %>
+
         <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
-          <%= will_paginate @comments %>
+
       </div>
 
-
-      <div class= "row ">
-
-
-        <div class="star-rating col-sm-12 col-md-12 co-md-12">
-          <p>Review score:<div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></p>
-          </div>
-
-          <p class= "star-rating"><% if !@product.highest_rating_comment.nil? %></p>
-          <p class= "body-rating"><%= @product.highest_rating_comment.body %></p>
-          <% end %>
-          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-          <%= render 'shared/comments' %>
-        </div>
-      </div>
+      <%= render 'products/ratings' %>
 
     </div>
-  </div>
 
+  </div>
 </div>
 <script src="jquery.elevatezoom.js" type="text/javascript"></script>

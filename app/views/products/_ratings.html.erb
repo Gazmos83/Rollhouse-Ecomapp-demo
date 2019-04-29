@@ -1,0 +1,12 @@
+<div class="row">
+
+  <div class="star-rating col-lg-12">
+    <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"><p>Review score:</p>
+    <% if !@product.highest_rating_comment.nil? %>
+    <p class= "body-rating"><%= @product.highest_rating_comment.body %></p>
+    <% end %>
+    </div>
+    <p><%= render 'shared/comments' %></p>
+    <p><%= will_paginate @comments %></p>
+  </div>
+</div>

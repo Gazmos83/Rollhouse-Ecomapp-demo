@@ -14,7 +14,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <% if signed_in? && current_user.admin? %><%= link_to 'New Product', new_product_path %><% end %>
+        <% if signed_in? && current_user.admin? %>
+        <%= link_to 'New Product', new_product_path %><% end %>
       </div>
     </div>
   </div>

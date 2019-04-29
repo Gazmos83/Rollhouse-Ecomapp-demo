@@ -7,15 +7,13 @@
       <li data-target="#carousel" data-slide-to="1"></li>
       <li data-target="#carousel" data-slide-to="2"></li>
       <li data-target="#carousel" data-slide-to="3"></li>
-      <li data-target="#carousel" data-slide-to="4"></li>
-      <li data-target="#carousel" data-slide-to="5"></li>
 
     </ol>
 
     <div class="carousel-inner">
       <% @products.each do |product| %>
       <div class="carousel-item <%= "active" if product == @products.first %>">
-        <%= image_tag(product.image_url, class: "img-fluid", id: "carousel_images") %>
+        <%= image_tag(product.image_url, class: "img-fluid product-img") %>
 
         <div class="carousel-caption d-none d-md-block">
           <h4><%= link_to product.name, product %></h4>
