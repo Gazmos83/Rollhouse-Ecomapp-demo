@@ -1,6 +1,10 @@
 
-<h2 class="product">Featured Products:</h2>
+<div class="center jumbotron">
+
+   <%= link_to "Check out our Products", products_path, class: "btn btn-lg btn-primary" %>
+
+</div>
+<!--<h2 class="product">Featured Products:</h2>
 
 <%= render 'shared/carousel' %>
-<!-- <%= @featured_product.name %> -->
-<%= params[:example_key].to_i * 10 %>
+<%= @featured_product.name %> -->

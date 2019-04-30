@@ -104,6 +104,18 @@
 
   /* simple_pages*/
 
+.jumbotron {
+  background-image: url('Sweaty.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: auto;
+  position: inherit;
+  padding: 10% 0% 15% 0%;
+  .btn {
+    max-width: none;
+    margin-right: 40%;}
+}
+.btn-lg, .btn-group-lg > .btn  { font-size: 1em;}
 #carousel h5 {
   font-size: 4em;
   padding-bottom: 30%;
