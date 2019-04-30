@@ -10,32 +10,24 @@
 
 </head>
 
-
 <body>
   <div class="container">
     <%= render 'layouts/nav' %>
     <%= render 'layouts/nav_short-text' %>
   </div>
-
-
+  <div class="search-bar">
+      <%= form_with(url: products_path, method: 'get', local: true, class: 'search_bar') do |form| %>
+    <ol><%= form.submit 'Search', class: 'btn btn-submit btn-sm' %>
+        <%= form.text_field :q, id: 'q', value: params[:q], class: 'form-fld' %>
+    <% end %>
+  </div>
   <% if notice %>
   <p id="notice" class="alert alert-primary"><%= notice %></p>
   <% end %>
 
-
   <%= yield %>
-  <footer class="container-fluid footer-section">
-    <small>
-      KLAD Consulting
-    </small>
-    <nav>
-      <ul>
-        <li><%= link_to "About", simple_pages_about_path %></li>
-        <li><%= link_to "Contact", simple_pages_contact_path %></li>
-        <li><a href="http://news.railstutorial.org/">News</a></li>
-      </ul>
-    </nav>
-  </footer>
+
+  <%= render 'layouts/footer' %>
   <%= render 'layouts/scripts' %>
 
 </body>
