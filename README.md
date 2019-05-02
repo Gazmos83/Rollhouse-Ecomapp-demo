@@ -10,6 +10,7 @@ SQLite3 for development and PostgreSQL for production.
 
 Features
 
+Responsive Design/Bootstrap Frontend Framework
 CRUD (create / read / update / delete) on products
 Creating / deleting comments on product page
 Real-time updates with ActionCable when a user posts a new comment
