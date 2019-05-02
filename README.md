@@ -1,44 +1,44 @@
 eCommerce Web-Application
 
-This is a simple webshop using ordinary features which can be found in most webshop applications.
+  This is a simple webshop using ordinary features which can be found in most webshop applications.
 
 Technologies
 
-Ruby 2.5.3
+  Ruby 2.5.3
 
-Rails 5.2.1
+  Rails 5.2.1
 
-SQLite3 for development and PostgreSQL for production.
+  SQLite3 for development and PostgreSQL for production.
 
 Features
 
--Responsive Design/Bootstrap Frontend Framework
+  -Responsive Design/Bootstrap Frontend Framework
 
--CRUD (create / read / update / delete) on products
+  -CRUD (create / read / update / delete) on products
 
--Creating / deleting comments on product page
+  -Creating / deleting comments on product page
 
--Real-time updates with ActionCable when a user posts a new comment
+  -Real-time updates with ActionCable when a user posts a new comment
 
--Creating orders with and payments with Stripe
+  -Creating orders with and payments with Stripe
 
--Pagination on comments listing
+  -Pagination on comments listing
 
--Searching on products
+  -Searching on products
 
--Authentication with Devise and authorizations (users, admins)
+  -Authentication with Devise and authorizations (users, admins)
 
--Creating user account
+  -Creating user account
 
--Sending E-mails
+  -Sending E-mails
 
--WebSockets
+  -WebSockets
 
--ActionCable
+  -ActionCable
 
--Application ready for production
+  -Application ready for production
 
--Rspec/Factory Bots
+  -Rspec/Factory Bots
 
 
 The Website can be reached with the following link: https://rollhouse.herokuapp.com/
