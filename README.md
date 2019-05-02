@@ -4,7 +4,7 @@ This is a simple webshop using ordinary features which can be found in most webs
 
 Technologies
 
-Ruby 2.5.1
+Ruby 2.5.3
 Rails 5.2.1
 SQLite3 for development and PostgreSQL for production.
 
@@ -18,7 +18,6 @@ Pagination on comments listing
 Searching on products
 Authentication with Devise and authorizations (users, admins)
 Creating user account
-Update user profile (incl. avatar image saved on Amazon S3) and changing password
 Sending E-mails
 Application ready for production
-The Website can be reached with the following link: https://vacationdestinations.herokuapp.com/
+The Website can be reached with the following link: https://rollhouse.herokuapp.com/
