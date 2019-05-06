@@ -12,6 +12,7 @@ Features
 
   - Responsive Design/Bootstrap Frontend Framework
   - CRUD (create / read / update / delete) on products
+  - Client side MVC frameworks (AJAX)
   - Creating / deleting comments on product page
   - Real-time updates with ActionCable when a user posts a new comment
   - Creating orders with and payments with Stripe
