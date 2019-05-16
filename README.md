@@ -22,7 +22,7 @@ Features
   - Creating user account
   - Sending E-mails
   - WebSockets
-  - ActionCable
+  - Product page specific ActionCable (Function only works locally)
   - Application ready for production
   - Rspec/Factory Bots
 
